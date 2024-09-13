@@ -17,7 +17,7 @@ async function SearchContainer({ result, type, query }) {
     return (
       <div className="flex flex-col items-center gap-3 justify-center my-24">
         <PiBinocularsFill className="text-7xl  text-zinc-300 bg-zinc-900 rounded-full px-2 py-2" />
-        <p className="text-xl text-zinc-400">No results for "{query}" </p>
+        <p className="text-xl text-zinc-400">No results for {query} </p>
       </div>
     );
   const filData = result.results
