@@ -2,10 +2,16 @@ import RatedStar from "@/app/_components/RatedStar";
 import { getTvSeason } from "@/app/_services/tmbd-data-services";
 import { format } from "date-fns";
 import Image from "next/image";
-
+export async function generateMetadata({ params }) {
+  const movie = await getTvSeason(params.tvId, params.seasonId);
+  return {
+    title: `${movie.original_name} ${movie.name}`,
+  };
+}
 async function Page({ params }) {
   const { tvId, seasonId } = params;
   const season = await getTvSeason(tvId, seasonId);
+  console.log(season);
   const {
     poster_path: bg,
     name,

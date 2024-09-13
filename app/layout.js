@@ -1,7 +1,6 @@
 import { Itim } from "next/font/google";
 import Header from "./_ui/Header";
 import "@/app/_styles/globals.css";
-import { SkeletonTheme } from "react-loading-skeleton";
 import SearchLogout from "./_ui/SearchLogout";
 import { UserProvider } from "./_components/UserContext";
 

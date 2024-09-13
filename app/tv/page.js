@@ -3,6 +3,12 @@ import MovieLayout from "../_components/MovieLayout";
 import { getLatestMovie } from "../_services/tmbd-data-services";
 import Footer from "../_ui/Footer";
 
+export async function generateMetadata() {
+  return {
+    title: `Tv`,
+  };
+}
+
 async function Page() {
   const latest = await getLatestMovie();
   const latest2 = latest.results.filter(

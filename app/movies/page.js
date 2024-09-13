@@ -2,9 +2,11 @@ import { getLatestMovie } from "../_services/tmbd-data-services";
 import MovieLayout from "../_components/MovieLayout";
 import DelayPreviewList from "../_components/DelayPreviewList";
 import Footer from "../_ui/Footer";
-export const metadata = {
-  title: "Movies",
-};
+export async function generateMetadata() {
+  return {
+    title: `Movies`,
+  };
+}
 async function Page() {
   const latest = await getLatestMovie();
   const latest2 = latest.results.filter(

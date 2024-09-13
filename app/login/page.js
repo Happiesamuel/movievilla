@@ -4,7 +4,11 @@ import {
   signInWithFacebookAction,
   signInWithGoogleAction,
 } from "../_lib/action";
-
+export async function generateMetadata() {
+  return {
+    title: `Login`,
+  };
+}
 function Page() {
   return (
     <div className="flex  w-full relative items-center justify-center min-h-[88vh]">

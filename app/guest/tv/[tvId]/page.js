@@ -6,7 +6,12 @@ import TvHeader from "@/app/_components/TvHeader";
 import { getMovie } from "@/app/_services/tmbd-data-services";
 import StateSpinner from "@/app/_ui/StateSpinner";
 import { Suspense } from "react";
-
+export async function generateMetadata({ params }) {
+  const movie = await getMovie("tv", params.tvId);
+  return {
+    title: `${movie.name}`,
+  };
+}
 async function Page({ params }) {
   const tv = await getMovie("tv", params.tvId);
   const { genres } = tv;

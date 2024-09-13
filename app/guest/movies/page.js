@@ -3,6 +3,11 @@ import Load from "@/app/_components/Load";
 import MovieContainer from "@/app/_components/MovieContainer";
 
 import { Suspense } from "react";
+export async function generateMetadata() {
+  return {
+    title: `Movies`,
+  };
+}
 
 async function Page({ searchParams }) {
   const filter = searchParams?.filter ?? "now_playing";

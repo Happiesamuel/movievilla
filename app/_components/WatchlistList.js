@@ -85,6 +85,7 @@ function WatchlistList({ watch, handleDelete }) {
             </ModalOpen>
 
             <RemoveWatchlist
+              title={watch.title}
               movieId={watch.movieId}
               handleDelete={handleDelete}
             />

@@ -4,6 +4,11 @@ import SearchContainer from "@/app/_components/SearchContainer";
 import SearchLoader from "@/app/_components/SearchLoader";
 import { getSearchDetails } from "@/app/_services/tmbd-data-services";
 import { Suspense } from "react";
+export async function generateMetadata() {
+  return {
+    title: `Search`,
+  };
+}
 
 async function Page({ searchParams }) {
   const filterArr = [

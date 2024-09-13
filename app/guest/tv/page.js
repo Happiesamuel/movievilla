@@ -2,6 +2,11 @@ import Filter from "@/app/_components/Filter";
 import Load from "@/app/_components/Load";
 import MovieContainer from "@/app/_components/MovieContainer";
 import { Suspense } from "react";
+export async function generateMetadata() {
+  return {
+    title: `Series`,
+  };
+}
 
 async function Page({ searchParams }) {
   const filter = searchParams?.filter ?? "airing_today";

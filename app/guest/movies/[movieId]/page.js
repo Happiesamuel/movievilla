@@ -5,6 +5,13 @@ import Similar from "@/app/_components/Similar";
 import Reviews from "@/app/_components/Reviews";
 import MovieHeader from "@/app/_components/MovieHeader";
 import StateSpinner from "@/app/_ui/StateSpinner";
+export async function generateMetadata({ params }) {
+  const movie = await getMovie("movie", params.movieId);
+  return {
+    title: `${movie.title}`,
+  };
+}
+
 export default async function Page({ params }) {
   const movie = await getMovie("movie", params.movieId);
   const { genres } = movie;

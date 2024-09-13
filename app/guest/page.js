@@ -3,8 +3,13 @@ import BrowseTrendingAll from "../_components/BrowseTrendingAll";
 import MovieLayout from "../_components/MovieLayout";
 import { getLatestMovie } from "../_services/tmbd-data-services";
 import { auth } from "../_lib/auth";
-
 import StateSpinner from "../_ui/StateSpinner";
+
+export async function generateMetadata() {
+  return {
+    title: `Guest`,
+  };
+}
 
 async function Page() {
   const latest = await getLatestMovie();

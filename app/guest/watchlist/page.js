@@ -8,6 +8,11 @@ import { auth } from "@/app/_lib/auth";
 import StateSpinner from "@/app/_ui/StateSpinner";
 import { Suspense } from "react";
 import { TbTelescopeOff } from "react-icons/tb";
+export async function generateMetadata() {
+  return {
+    title: `Watchlist`,
+  };
+}
 
 async function Page({ searchParams }) {
   const session = await auth();
