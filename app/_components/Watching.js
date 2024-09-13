@@ -4,10 +4,8 @@ import WatchlistCancel from "./WatchlistCancel";
 import TvWatchlist from "./TvWatchlist";
 import MovieWatchlist from "./MovieWatchlist";
 import Link from "next/link";
-import { Suspense } from "react";
 
 async function Watching({ watchId, watching }) {
-  if (!watchId) return;
   const [movie, trailer] = await Promise.all([
     await getMovie(watching, watchId),
     await getMovieDetails(watching, watchId, "videos"),

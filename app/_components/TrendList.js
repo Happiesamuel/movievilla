@@ -11,7 +11,7 @@ async function TrendList({ browseRes, type }) {
   const watchlist = await getWatchlist(session.user.guestId);
   return (
     <Menu>
-      <div className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 mx-2 my-3 lg:mx-6 lg:my-6">
+      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mx-2 my-3 lg:mx-6 lg:my-6">
         {browseRes.map((res) => (
           <div key={res.id}>
             <div className="relative w-full aspect-square ">

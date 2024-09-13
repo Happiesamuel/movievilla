@@ -18,7 +18,7 @@ function Filter({ filterArr, defaults }) {
   return (
     <div>
       <div
-        className={`flex float-right mt-3 mx-6 w-max divide-x divide-zinc-700 border border-zinc-700 rounded-md`}
+        className={`flex float-right mt-3 mx-1 md:mx-6 w-max divide-x divide-zinc-700 border border-zinc-700 rounded-md`}
       >
         {filterArr.map((fil) => (
           <div

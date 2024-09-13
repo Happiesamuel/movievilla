@@ -14,7 +14,7 @@ function Sort({ arrSort, defaults }) {
   return (
     <form>
       <select
-        className="border-none outline-none text-zinc-400 bg-zinc-800 rounded-full mx-3"
+        className="border-none w-[80%] outline-none text-zinc-400 bg-zinc-800 rounded-full mx-3"
         value={defaults}
         onChange={(e) => handleChange(e.target.value)}
       >

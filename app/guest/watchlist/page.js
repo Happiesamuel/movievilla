@@ -5,7 +5,9 @@ import WatchlistContainer from "@/app/_components/WatchlistContainer";
 import WatchLoad from "@/app/_components/WatchLoad";
 import { getWatchlist } from "@/app/_lib/action";
 import { auth } from "@/app/_lib/auth";
+import StateSpinner from "@/app/_ui/StateSpinner";
 import { Suspense } from "react";
+import { TbTelescopeOff } from "react-icons/tb";
 
 async function Page({ searchParams }) {
   const session = await auth();
@@ -84,16 +86,28 @@ async function Page({ searchParams }) {
   if (fil === "tv") data = watchlist.filter((watch) => watch.type === "tv");
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-2">
       <div className=" flex items-center justify-between ">
         <Sort arrSort={arrSort} defaults={sort} />
         <Filter defaults="all" filterArr={filterArr} />
       </div>
-      <Suspense key={fil || sort} fallback={<WatchLoad />}>
-        <WatchlistContainer watchlist={data} />
-      </Suspense>
-
-      <Watching watchId={watchId} watching={watching} />
+      {!watchlist.length ? (
+        <div className="min-h-[60vh] flex flex-col justify-center items-center gap-2">
+          <TbTelescopeOff className="text-7xl rounded-full  bg-zinc-800 text-zinc-400 " />
+          <p className="text-base text-zinc-400 px-3 text-center">
+            You haven&apos;t added any movie/series to your watchlist.
+          </p>
+        </div>
+      ) : (
+        <Suspense key={fil || sort} fallback={<WatchLoad />}>
+          <WatchlistContainer watchlist={data} />
+        </Suspense>
+      )}
+      {watchId && watching && (
+        <Suspense key={watchId && watching} fallback={<StateSpinner />}>
+          <Watching watchId={watchId} watching={watching} />
+        </Suspense>
+      )}
     </div>
   );
 }

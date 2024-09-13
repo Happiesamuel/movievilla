@@ -18,7 +18,7 @@ async function Page() {
       <MovieLayout latestMovie={latestMovie} />
       <div className="mx-3 my-3">
         <h1 className="font-bold text-2xl text-zinc-100">
-          Welcome, {session?.user?.name}
+          Welcome, {session?.user?.name.split(" ").at(0)}
         </h1>
       </div>
       <Suspense fallback={<StateSpinner />}>

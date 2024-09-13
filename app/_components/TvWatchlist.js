@@ -17,7 +17,6 @@ function TvWatchlist({ tv, trailer }) {
     genres,
   } = tv;
   const vid = trailer.results.at(0);
-
   return (
     <div className="mx-2 my-2">
       <div className="flex justify-between items-center">
@@ -36,7 +35,7 @@ function TvWatchlist({ tv, trailer }) {
           ))}
         </div>
       </div>
-      {trailer && (
+      {trailer.results.length > 0 && (
         <div key={vid.key} className=" w-full h-full mt-4">
           <YoutubeTrailer videoId={vid.key} title={vid.name} />
         </div>
