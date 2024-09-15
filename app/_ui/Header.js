@@ -10,7 +10,7 @@ function Header({ children }) {
   return (
     <div
       className={`flex justify-between md:px-12 px-6 py-5 items-center z-20  fixed ${
-        pathName.length > 1 && "bg-[#0f0f0f]"
+        pathName.length > 1 ? "bg-[#0f0f0f]" : "backdrop-blur-sm"
       } w-full`}
     >
       <h1 className="text-slate-50 font-bold text-3xl z-50">MovieVilla</h1>
