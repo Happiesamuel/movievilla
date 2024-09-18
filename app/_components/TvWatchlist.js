@@ -17,12 +17,14 @@ function TvWatchlist({ tv, trailer }) {
     genres,
   } = tv;
   const vid = trailer.results.at(0);
+  console.log(firstAir, lastAir);
   return (
     <div className="mx-2 my-2">
       <div className="flex justify-between items-center">
         <h1 className="text-zinc-200 text-3xl font-bold ">{name}</h1>
         <p className="text-zinc-400 text-base">
-          {firstAir.split("-").at(0)} - {lastAir.split("-").at(0)} ({status})
+          {firstAir?.split("-").at(0)} -{" "}
+          {lastAir?.split("-")?.at(0) ?? "Till date"} ({status})
         </p>
       </div>
       <div className="flex justify-between items-center mt-2 border-b border-zinc-800 pb-2">
