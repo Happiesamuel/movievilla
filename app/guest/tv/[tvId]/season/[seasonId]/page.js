@@ -5,7 +5,7 @@ import Image from "next/image";
 export async function generateMetadata({ params }) {
   const movie = await getTvSeason(params.tvId, params.seasonId);
   return {
-    title: `${movie.original_name} ${movie.name}`,
+    title: `${movie.name}`,
   };
 }
 async function Page({ params }) {
