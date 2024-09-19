@@ -40,6 +40,7 @@ function HomeSwiper({ movies }) {
                 className="cursor-pointer relative aspect-square w-[95%] h-[200px]"
               >
                 <Image
+                  unoptimized
                   fill
                   alt={movie.original_title}
                   className="object-cover rounded-md"
