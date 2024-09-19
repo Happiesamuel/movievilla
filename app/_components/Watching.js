@@ -12,6 +12,7 @@ async function Watching({ watchId, watching }) {
   ]);
   //
   const { backdrop_path: bg, id } = movie;
+  console.log(bg);
   return (
     <div className="fixed top-0 left-0 right-0 h-screen w-full backdrop-blur-sm z-30 ">
       <div

@@ -19,6 +19,7 @@ const nextConfig = {
         port: "",
       },
     ],
+    unoptimized: false,
   },
   // output: "export",
 };
